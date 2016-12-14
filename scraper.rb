@@ -9,6 +9,9 @@ require 'wikidata/fetcher'
 module Wikisnakker
   class Item
     SKIP = %i(P17 P18 P242 P910).to_set
+    # TODO, reinstate this once Wikisnakker handles co-ordinates
+    SKIP << :P625
+
     WANT = {
       P31:  :type,
       P571: :start_date,
