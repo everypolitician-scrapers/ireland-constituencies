@@ -33,7 +33,7 @@ module Wikisnakker
     end
 
     def names
-      labels.map { |k, v| ["name__#{k}", v[:value]] }.to_h
+      labels.map { |k, v| ["name__#{k.to_s.gsub('-','_')}", v[:value]] }.to_h
     end
 
     def unknown_properties
