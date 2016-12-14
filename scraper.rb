@@ -8,7 +8,7 @@ require 'wikidata/fetcher'
 
 module Wikisnakker
   class Item
-    SKIP = %i(P17 P18 P910).to_set
+    SKIP = %i(P17 P18 P242 P910).to_set
     WANT = {
       P31:  :type,
       P571: :start_date,
