@@ -6,6 +6,12 @@ GIT
       everypolitician-popolo
 
 GIT
+  remote: https://github.com/everypolitician/wikidata-area.git
+  revision: bc24d542911d247173e9b5cc9ed9e4b205b9c2fb
+  specs:
+    wikidata-area (0.1.0)
+
+GIT
   remote: https://github.com/everypolitician/wikidata-fetcher.git
   revision: c637425ac87826c8c1cd63063ab983e78d6eda97
   specs:
@@ -115,6 +121,7 @@ DEPENDENCIES
   rake
   rubocop
   scraperwiki!
+  wikidata-area!
   wikidata-fetcher (>= 0.19.0)!
   wikisnakker!
 
