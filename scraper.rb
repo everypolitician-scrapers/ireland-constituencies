@@ -7,7 +7,7 @@ require 'scraperwiki'
 require 'wikidata/fetcher'
 
 module Wikisnakker
-  class Item
+  class Area < Item
     SKIP = %i(P17 P18 P242 P910).to_set
     # TODO, reinstate this once Wikisnakker handles co-ordinates
     SKIP << :P625
@@ -67,7 +67,7 @@ module Wikidata
     attr_reader :ids
 
     def wikisnakker_items
-      @wsitems ||= Wikisnakker::Item.find(ids)
+      @wsitems ||= Wikisnakker::Area.find(ids)
     end
   end
 end
