@@ -8,15 +8,12 @@ require 'wikidata/fetcher'
 require 'wikidata/area'
 
 query = <<QUERY
-  SELECT DISTINCT ?item
-  WHERE
-  {
-    ?item wdt:P31 wd:Q28007428 .
-  }
+  SELECT DISTINCT ?item WHERE { ?item wdt:P31 wd:Q28007428 }
 QUERY
 
 wanted = EveryPolitician::Wikidata.sparql(query)
 raise 'No ids' if wanted.empty?
 
 data = Wikidata::Areas.new(ids: wanted).data
+ScraperWiki.sqliteexecute('DROP TABLE data') rescue nil
 ScraperWiki.save_sqlite(%i(id), data)
